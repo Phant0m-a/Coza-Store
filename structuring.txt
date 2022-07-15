@@ -1,0 +1,145 @@
+add UUID() on every ID: 🆔 
+
+*// Blog should also be sorted on months or year {stacks for month or year of blogs}
+blog:{
+	img: String,
+	title: String,
+	desc: String,
+	paragraph: String,
+	comments: ref('Comment'),
+	date: Date,
+	author: String,	*//it can be ref('Author') or ref('User').
+	tags:[], // first three tags could be included in blog card.
+	catagory : ref('Catagory')
+     }
+
+Notes:
+	*//number of comments needs to displayed too both on blogCard and blogDetails.
+
+
+------------------------------------------------------------------------------------------------
+blogCatagory:{
+	title: String required,	
+
+	}
+
+------------------------------------------------------------------------------------------------
+
+featuredProduct:{
+	img:,
+	title:,
+	price:,	
+*//how about using featured field in products schema
+    }
+
+
+------------------------------------------------------------------------------------------------
+
+*//find mechanism how product is New, Popular or has average rating.
+product:{
+	img: String required,
+	title: String required,
+	price: Number required,
+	catagory: ref('Category')
+	size: s,m,l,xl, required
+	color: red, blue, white, grey, required	
+	quantity: Number min:1 required,
+	featured: bool, Default:false, //bool
+	desc: String required,
+	demoImag:[{img: , *//favorite[each img find mechanism ]}] 
+	*//implement favorites mechanism for every user (how to determine or save if user has FAV 	some item)
+	productType: String, required   ref('ProductType') 
+	 //male, female, watch, bag, watch etc.
+}
+
+
+productType{
+	imgSrc: String required,
+	title: String required,
+	desc: String required
+}
+
+
+----------------------------------------------------------------------------------------------
+
+Category:{
+	title:
+	
+    }
+
+--------------------------------------------------------------------------------------------
+// its feedback in about page
+SendMessage:{
+	email: email required,
+	message: String required,
+	date: Date required,
+
+    }
+
+
+-------------------------------------------------------------------------------------------
+// leave a comment for each blog in Blog Page 
+comment:{
+	email: email required,
+	comment: String required,
+	name: String required,
+	//for product and product
+	//also need ratings and averages for 5 to 1 stars each 
+	//blog: ref('blog'),
+	//product: ref('product'),
+	website: Default:www.CozaStore.com
+	date: Date required,
+	}
+
+
+-------------------------------------------------------------------------------------------
+
+// Your cart
+Cart:{
+	[
+	  title: ref('product'),
+	  quantity: number ,
+	]
+       Total: Number
+     }
+
+-------------------------------------------------------------------------------------------
+
+user:{
+	name: String required,
+	email: email required,
+	password: String{hashed} required,
+	img: String,
+	}
+
+
+
+-------------------------------------------------------------------------------------------
+To do :
+//for product and product
+	//also need ratings and averages for 5 to 1 stars each 
+	//blog: ref('blog'),
+	//product: ref('product'),
+
+
+*// Future implementation of NEWSLETTER
+
+
+
+
+
+
+
+
+
+
+
+
+
+Admin Panel Part
+----------------
+	*// Do Blog Part first
+	    get, post, put, delete
+	
+
+
