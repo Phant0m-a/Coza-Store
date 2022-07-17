@@ -8,7 +8,10 @@ const fileUpload = require('express-fileupload');
 const methodOverride = require('method-override')
 
 // custom Routes
-const authRouter = require('./routes/userRouter');
+const authRouter = require('./routes/authRouter');
+const userRouter = require('./routes/admin/userRouter');
+const blogRouter = require('./routes/blogRouter');
+const blogCatRouter = require('./routes/admin/blogCatRoute');
 // const homeRouter = require('./routers/homeRouter');
 // const categoryRouter = require('./routers/catRouter.js');
 // const courseRouter = require('./routers/courseRouter.js');
@@ -50,6 +53,9 @@ app.get('/', (req, res) => {
 
 // app.use
 app.use("/api/auth", authRouter);
+app.use("/api/user", userRouter);
+app.use("/api/blog", blogRouter);
+app.use("/api/blogcat", blogCatRouter);
 // app.use("/api/home", homeRouter);
 // app.use("/api/category", categoryRouter);
 // app.use("/api/course", courseRouter);
