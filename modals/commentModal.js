@@ -4,6 +4,7 @@ const schema = mongoose.Schema({
 
     email: { type: email, required: true },
     message: { type: String, required: true },
+    imgSrc: { type: String, default: '' },
     date: {
         type: Date,
         default: Date().now,

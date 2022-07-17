@@ -5,13 +5,13 @@ const schema = mongoose.Schema({
     title: { type: String, required: true },
     desc: { type: String, required: true },
     paragraph: { type: String, required: true },
-    comments: { type: mongoose.Schema.Types.ObjectId, ref: 'Comment' },
+    comments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comment' }],
     date: Date,
     author: { type: String, required: true }, //* it can be ref('Author') or ref('User').
     tags: [{
-        type:String,
+        type: String,
     }], // first three tags could be included in blog card.
-    catagory: { type: mongoose.Schema.Types.ObjectId, ref: 'BlogCategory' }
+    category: { type: mongoose.Schema.Types.ObjectId, ref: 'BlogCategory' }
 });
 
 const BlogModal = mongoose.model('Blog', schema);
