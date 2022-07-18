@@ -6,13 +6,15 @@ const schema = mongoose.Schema({
     price: { type: String, required: true },
     // category: { type: mongoose.Schema.Types.ObjectId, ref: 'Category' },
     // 
-    size: [{ type: String, default: 'l' }],//s,m,l,xl, required
+    size: ['s','m','l','xl'],
+    // size: [{ type: String, default: 'l' }],//s,m,l,xl, required
     // COLOR AND QUANTITY IS SELECTED BY USER HIMSELF SO we SHOULD  ADD 2 DIFFERENT SCHEMAS FOR BOTH ✅☑✔if real life
-    color: [{ type: String, default: 'white' }],//red, blue, white, grey, required	
+    // color: [{ type: String, default: 'white' }],//red, blue, white, grey, required	
+    color:['white','blue','black','grey'],
     quantity: { type: Number, Default: 1, },
     featured: { type: Boolean, Default: false },//bool
-    desc: { type: String, default: '' },
-    demoImg: [{
+    description: { type: String, default: '' },
+    productImg: [{
         imgSrc: { type: String, index: { type: Number, default: 0 } },
         //&favorite [each img find mechanism ]
     }],

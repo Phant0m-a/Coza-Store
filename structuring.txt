@@ -122,6 +122,24 @@ To do :
 	//product: ref('product'),
 
 
+//Blog router 
+	/:post
+	// implement tags, use spilcing and index to add or remove or add a tag
+	// same goes for adding or removing comments
+    // comments add array isnt working	
+
+//product router 
+	/:put
+	// ToDo: Demo img uses array work later on it
+	/:post
+	// TODO:pushing to array needs work
+	// TODO:pushing to array needs work
+	/:Delete
+	//Todo: demoImg have array of img So delete while looping!
+
+//productType & blogCat
+	//:add put and delete routes
+
 *// Future implementation of NEWSLETTER
 *// add delete user feature or block user 
 *// Comments for Products (ref('products'))
@@ -139,18 +157,19 @@ To do :
 Admin Panel Part
 ----------------
 	*// Do Blog Part first
-	    get, post, put, delete
+	   ☑ get, post, put, delete
 
 
 
 	*// Logged In user
 		Admin:Should be able to 
 			✅- add user;
+			✅- to add, edit, delete, hide/show products;
 			- See all users and their blogs(also modify or delete/hide);
 			- moderate(add, edit or delete comments);
 			- Can write his own blogs;
 			- See feedbacks and those user info;
-			- to add, edit, delete, hide/show products;
+			
 
 			Stats:
 			- stats for daily blogs and blogs upload by individual user.
@@ -166,6 +185,7 @@ Admin Panel Part
 			✅- change password & profile pic
 			✅- write/view blogs'
 			✅- Edit, delete or hide blog;  
+			- moderate comments on blogs,(report or hide them!).
 			- view his purchased products and //favorite items
 
 		----------------------------------------------------------------
