@@ -12,13 +12,18 @@ const { User } = require('mongoose/node_modules/mongodb');
 // const CatModal = require('../modals/catModal');
 const mongoose = require('mongoose');
 const UserModal = require('../../modals/userModal');
+const BlogModal = require('../../modals/blogModal');
 const userRouter = express.Router();
 
 
 
 userRouter.get('/newUser', async (req, res) => {
     // res.render('admin/register/register');
-    res.status(200).send({ success: true, message: "bro, This will be add new user form " });
+    try {
+        res.status(200).send({ success: true, message: "bro, This will be add new user form " });
+    } catch (err) {
+        res.status(401).send({ success: false, message: 'failed! ', err });
+    }
 })
 
 userRouter.post("/newUser", async (req, res) => {
@@ -103,6 +108,71 @@ userRouter.put('/updateUser', async (req, res) => {
         res.status(401).send({ success: false, message: 'failed to update password! ', err });
     }
 })
+
+
+
+
+
+// all-users
+
+userRouter.get('/allusers', async (req, res) => {
+    try {
+        // all users 
+        let users = await UserModal.find({});
+
+        // all blogs ->users 
+        let blogs = await BlogModal.find({}).populate('author',).populate('category').exec();
+        
+   var usersObject = []; 
+        users.forEach(user => {
+            for (let i = 0; i < blogs.length; i++) {
+              
+                if(user.id == blogs[i].author._id){
+
+                        console.log(blogs[i].author.name);
+                        // stores blog temporary
+                        let Blogs = blogs[i];
+                        let newUserObject = {
+                            // add user and all blog info
+                            user,
+                            Blogs
+                        };
+                        usersObject.push(newUserObject);
+                }
+                
+            }
+        });
+
+    //   
+    // const userBlogs = await UserModal.aggregate([
+    //     {
+    //         $match: {
+    //             _id: { $eq: mongoose.Types.ObjectId(id) }
+    //         }
+    //     },
+    //     {
+    //         $lookup: {
+    //             from: "purchases",
+    //             "localField": "_id",
+    //             "foreignField": "user",
+    //             "as": "purchases"
+    //         },
+    //     }
+    // ]).exec();
+    // 
+
+        res.status(200).send({ success: true, message:
+             { blogs, users },
+              usersObject
+             });
+
+    } catch (err) {
+        res.status(401).send({ success: false, message: 'failed to update password! ', err });
+    }
+});
+
+
+
 
 // auth end
 module.exports = userRouter;

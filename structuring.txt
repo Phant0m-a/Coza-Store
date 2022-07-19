@@ -116,6 +116,10 @@ user:{
 
 -------------------------------------------------------------------------------------------
 To do :
+//userRouter 
+	/:get allusers 
+	//implement join query b/w users & their blogs if possible (attach feedback if any)
+
 //for product and product
 	//also need ratings and averages for 5 to 1 stars each 
 	//blog: ref('blog'),
@@ -140,17 +144,24 @@ To do :
 //productType & blogCat
 	//:add put and delete routes
 
+
+//feedback router
+	:/post 
+	// implement, that user can be attached with each comment to keep track of every feedback
+
+
+
 *// Future implementation of NEWSLETTER
 *// add delete user feature or block user 
 *// Comments for Products (ref('products'))
 
 
 
-
-
-
-
-
+Front-end Part
+--------------
+	//* 1.	view all users and blogs. 
+	//* buttons to view->feedbacks & blogs -> moderate comments
+	//* 2.		
 
 
 
@@ -165,10 +176,11 @@ Admin Panel Part
 		Admin:Should be able to 
 			✅- add user;
 			✅- to add, edit, delete, hide/show products;
-			- See all users and their blogs(also modify or delete/hide);
+			✅- See all users and their blogs
+			- (also modify or delete/hide);
 			- moderate(add, edit or delete comments);
-			- Can write his own blogs;
-			- See feedbacks and those user info;
+			- Can write his own blogs; (just need a new route!)
+			✅- See feedbacks and those user info;
 			
 
 			Stats:
@@ -176,7 +188,7 @@ Admin Panel Part
 			- products sold and quantity & per day sold.
 			- number of comments and by which person & how many a day and total;
 
-			FAQ/Privacy/Contract:
+			FAQ/PrivacyPolicy/Terms&Conditions:
 			- write/edit/hide/delete/view
 
 		----------------------------------------------------------------

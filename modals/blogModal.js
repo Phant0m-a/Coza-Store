@@ -10,11 +10,16 @@ const schema = mongoose.Schema({
         type:Date,
         default:Date()  
     },
-    author: { type: String, required: true }, //* it can be ref('Author') or ref('User').
+    author: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
+    },
+    // author: { type: String, required: true },
+     //* it can be ref('Author') or ref('User').
     tags: [{
         type: String,
     }], // first three tags could be included in blog card.
-    category: { type: mongoose.Schema.Types.ObjectId, ref: 'BlogCategory' }
+    category: { type: mongoose.Schema.Types.ObjectId, ref: 'BlogCat' }
     ,drafted:{
         type:Boolean,
         default:false
