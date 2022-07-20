@@ -15,11 +15,10 @@ const blogCatRouter = require('./routes/admin/blogCatRoute');
 const productTypeRouter = require('./routes/admin/productType');
 const productRouter = require('./routes/admin/productsRouter');
 const feedbackRouter = require('./routes/admin/feedbackRouter');
-// const homeRouter = require('./routers/homeRouter');
-// const categoryRouter = require('./routers/catRouter.js');
-// const courseRouter = require('./routers/courseRouter.js');
-// const purchaseRouter = require('./routers/purchaseRouter.js');
-// const lectureRouter = require('./routers/lectureRouter.js');
+const faqRouter = require('./routes/admin/faqRouter');
+const copyrightRouter = require('./routes/admin/copyrightRoute');
+const termsRouter = require('./routes/admin/terms&conRouter');
+
 // ...
 
 app.use(express.json())
@@ -62,11 +61,10 @@ app.use("/api/blogcat", blogCatRouter);
 app.use("/api/admin/product", productRouter);
 app.use("/api/admin/productType", productTypeRouter);
 app.use("/api/admin/feedback", feedbackRouter);
-// app.use("/api/home", homeRouter);
-// app.use("/api/category", categoryRouter);
-// app.use("/api/course", courseRouter);
-// app.use("/api/purchase", purchaseRouter);
-// app.use("/api/lecture", lectureRouter);
+app.use("/api/admin/faq", faqRouter);
+app.use("/api/admin/copyright", copyrightRouter);
+app.use("/api/admin/terms", termsRouter);
+
 // ...
 
 // app listener

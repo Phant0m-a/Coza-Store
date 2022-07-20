@@ -188,9 +188,12 @@ Admin Panel Part
 			- products sold and quantity & per day sold.
 			- number of comments and by which person & how many a day and total;
 
-			FAQ/PrivacyPolicy/Terms&Conditions:
-			- write/edit/hide/delete/view
 
+			write/edit/hide/delete/view
+			✅- FAQ
+			✅- PrivacyPolicy
+			✅- Terms&Conditions:
+			
 		----------------------------------------------------------------
 		
 		User: Should be able to 
